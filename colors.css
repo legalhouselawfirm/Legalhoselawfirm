@@ -1,0 +1,55 @@
+:root {
+  /* ---- Base palette ---- */
+  --ink-950: #0F0C02;      /* near-black, brand ink — headers, footer, primary text */
+  --ink-900: #1A1608;
+  --ink-700: #3A3424;
+
+  --navy-950: #0C1A2E;     /* deep navy — hero section background */
+  --navy-900: #122540;
+
+  --gold-500: #FECE00;     /* bright brand gold — gradient top / highlight */
+  --gold-600: #B49630;     /* deep brand gold — gradient bottom / body gold text */
+
+  --white: #FFFFFF;
+  --neutral-50: #F5F5F5;   /* alternating section background */
+  --neutral-100: #F3F4F6;  /* card / divider borders (gray-100) */
+  --neutral-200: #E5E7EB;  /* borders (gray-200) */
+  --neutral-300: #D1D5DB;  /* muted text on dark (gray-300) */
+  --neutral-400: #9CA3AF;  /* muted text on dark (gray-400) */
+  --neutral-500: #6B7280;  /* muted text on light (gray-500) */
+  --neutral-700: #374151;
+
+  --success-600: #16A34A;
+  --danger-600: #DC2626;
+  --danger-700: #B91C1C;
+  --info-600: #2563EB;
+
+  /* ---- Gradients ---- */
+  --gradient-gold: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%);
+  --gradient-gold-underline: linear-gradient(90deg, var(--gold-600), var(--gold-500), var(--gold-600));
+  --gradient-divider: linear-gradient(90deg, transparent, var(--gold-600), var(--gold-500), var(--gold-600), transparent);
+  --gradient-hairline: linear-gradient(90deg, var(--gold-600), transparent);
+
+  /* ---- Semantic aliases ---- */
+  --surface-page: var(--white);
+  --surface-alt: var(--neutral-50);
+  --surface-dark: var(--ink-950);
+  --surface-navy: var(--navy-950);
+  --surface-card: var(--white);
+  --surface-overlay: rgba(15, 12, 2, 0.7);
+
+  --text-primary: var(--ink-950);
+  --text-primary-70: rgba(15, 12, 2, 0.7);
+  --text-primary-80: rgba(15, 12, 2, 0.8);
+  --text-on-dark: var(--white);
+  --text-on-dark-muted: var(--neutral-300);
+  --text-on-dark-faint: var(--neutral-400);
+  --text-gold: var(--gold-600);
+  --text-muted: var(--neutral-500);
+
+  --border-subtle: var(--neutral-100);
+  --border-default: var(--neutral-200);
+  --border-gold: rgba(180, 150, 48, 0.3);
+
+  --focus-ring: var(--ink-950);
+}

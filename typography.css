@@ -1,0 +1,47 @@
+:root {
+  /* ---- Font families ---- */
+  /* Display serif — hero headlines, section titles, big stats, pull-quotes. Often italic for emphasis line. */
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  /* Secondary serif — reserved for occasional alternate headline treatment */
+  --font-serif-alt: 'Playfair Display', Georgia, serif;
+  /* Primary UI sans — body copy, nav, buttons, labels */
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Secondary sans — used interchangeably with DM Sans for UI text */
+  --font-sans-alt: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Menlo', 'Consolas', monospace;
+
+  /* ---- Weights ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Display scale (Cormorant) ---- */
+  --text-display-xl: 700 4.5rem/1.05 var(--font-display);   /* hero H1 desktop (6xl) */
+  --text-display-lg: 700 3rem/1.1 var(--font-display);      /* section H2 desktop (5xl) */
+  --text-display-md: 600 2.25rem/1.15 var(--font-display);  /* page title (4xl) */
+  --text-display-sm: 600 1.75rem/1.2 var(--font-display);   /* card / subsection title (2xl) */
+  --text-stat: 700 4.5rem/1 var(--font-display);            /* big stat numbers (7xl) */
+
+  /* ---- Body scale (DM Sans) ---- */
+  --text-body-lg: 400 1.25rem/1.6 var(--font-sans);   /* lede paragraphs (xl) */
+  --text-body-md: 400 1.125rem/1.6 var(--font-sans);  /* standard paragraph (lg) */
+  --text-body-sm: 400 1rem/1.5 var(--font-sans);      /* base */
+  --text-body-xs: 400 0.875rem/1.5 var(--font-sans);  /* sm — captions, meta */
+
+  --text-label-md: 600 1rem/1.3 var(--font-sans);
+  --text-label-sm: 500 0.875rem/1.3 var(--font-sans);
+
+  /* Raw size scale for utility use */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+  --fs-6xl: 3.75rem;
+  --fs-7xl: 4.5rem;
+}
