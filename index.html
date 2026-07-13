@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Legal House — Advocates & Consultants | Indore, Delhi</title>
+<meta name="description" content="Legal House is a full-service Indian law firm — Supreme Court, High Courts, District & Family Courts and Tribunals across India. Offices in Indore and Delhi. Free consultation available.">
+<meta name="theme-color" content="#0C1A2E">
+<link rel="icon" type="image/png" href="assets/legal-house-logo-full.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Legal House — Advocates & Consultants">
+<meta property="og:description" content="Full-service Indian law firm. Trusted legal counsel across litigation, corporate and advisory matters.">
+<meta property="og:image" content="assets/legal-house-logo-full.png">
+<!-- ============================================================
+     ANALYTICS (Google Analytics 4) — currently OFF.
+     To turn on: create a GA4 property at analytics.google.com,
+     copy your Measurement ID (looks like G-XXXXXXXXXX), paste it
+     in BOTH places below, then remove the two lines that say
+     "REMOVE THIS LINE" to un-comment the block.
+     ============================================================ -->
+<!-- REMOVE THIS LINE to enable analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+REMOVE THIS LINE to enable analytics -->
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1; }
+  section[id], footer[id] { scroll-margin-top: 145px; }
+  .lh-mobile-toggle { display: none; }
+  .lh-top-bar-text { display: inline; }
+
+  @media (max-width: 900px) {
+    .lh-desktop-nav { display: none !important; }
+    .lh-mobile-toggle { display: flex !important; }
+    .lh-top-bar-text { display: none; }
+    .lh-logo { height: 40px !important; max-width: 160px !important; }
+    .lh-hero-grid { grid-template-columns: 1fr !important; }
+    .lh-hero-image { display: none; }
+    .lh-hero-h1 { font-size: 36px !important; }
+    .lh-hero-h2 { font-size: 26px !important; margin-bottom: 20px !important; }
+    .lh-stats-grid { gap: 16px !important; }
+    .lh-stats-grid > div > div:first-child { font-size: 32px !important; }
+    .lh-stats-grid > div > div:last-child { font-size: 14px !important; }
+    .lh-team-grid { gap: 32px !important; }
+    .lh-footer-contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .lh-internship-grid { grid-template-columns: 1fr !important; }
+    .lh-practice-sidebar { display: none !important; }
+    .lh-footer-bottom { justify-content: center !important; text-align: center !important; }
+    .lh-section-h2 { font-size: 28px !important; }
+    .lh-expertise-layout { flex-direction: column !important; }
+    .lh-expertise-photo { width: 100% !important; max-width: 320px; }
+  }
+
+  html, body { overflow-x: hidden; }
+  @media (max-width: 600px) {
+    #insights, #testimonials, #location > div:first-child { padding-top: 56px !important; padding-bottom: 56px !important; }
+    .lh-testimonial-row { gap: 10px !important; }
+    .lh-testimonial-arrow { width: 40px !important; height: 40px !important; flex-shrink: 0; }
+    .lh-testimonial-quote p { font-size: 18px !important; line-height: 1.5 !important; }
+    .lh-footer-soc { width: 46px !important; height: 46px !important; }
+    .lh-section-h2 { font-size: 26px !important; }
+  }
+
+  .lh-linkedin-badge { animation: lhFloat 3s ease-in-out infinite; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .lh-linkedin-badge:hover { transform: translateY(-6px) scale(1.12) !important; box-shadow: 0 8px 18px rgba(0,0,0,0.35) !important; animation-play-state: paused; }
+  @keyframes lhFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+  .lh-testimonial-arrow:hover { background: rgba(254,206,0,0.15) !important; border-color: var(--gold-500) !important; }
+
+  .lh-chat-fab { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .lh-chat-fab:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 16px 40px rgba(0,0,0,0.4), inset 0 0 0 2px var(--gold-500) !important; }
+  @media (prefers-reduced-motion: no-preference) {
+    .lh-chat-fab-pulse::after { content: ''; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--gold-500); animation: lhChatPulse 2.4s ease-out infinite; pointer-events: none; }
+    .lh-chat-dot { animation: lhChatBlink 1.6s ease-in-out infinite; }
+    .lh-chat-nudge { animation: lhChatNudgeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+    .lh-chat-window { animation: lhChatNudgeIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both; transform-origin: bottom right; }
+  }
+  @keyframes lhChatPulse { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.55); opacity: 0; } }
+  @keyframes lhChatBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @keyframes lhChatNudgeIn { from { opacity: 0; transform: translateY(14px) scale(0.92); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+  .lh-nav-link::after { content: ''; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: linear-gradient(90deg, var(--gold-600), var(--gold-500)); transition: right 0.3s ease; }
+  .lh-nav-link:hover::after, .lh-nav-active::after { right: 0; }
+  .lh-nav-link { transition: color 0.25s ease; }
+  .lh-nav-link:hover, .lh-nav-active { color: var(--gold-600) !important; }
+
+  .lh-reel-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .lh-reel-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg, 0 14px 34px rgba(0,0,0,0.14)) !important; }
+  .lh-reel-thumb .lh-reel-play { transition: transform 0.3s ease, background 0.25s ease; }
+  .lh-reel-card:hover .lh-reel-play { transform: scale(1.12); background: #fff !important; }
+  .lh-insights-cta { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .lh-insights-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg, 0 12px 28px rgba(0,0,0,0.18)) !important; }
+  .lh-footer-soc { transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease; }
+  .lh-footer-soc:hover { transform: translateY(-3px); background: rgba(254,206,0,0.14) !important; border-color: var(--gold-500) !important; }
+
+  .lh-expertise-row { transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .lh-expertise-row:hover { background: var(--neutral-50); box-shadow: var(--shadow-md); border-color: var(--gold-600) !important; }
+  .lh-engage-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .lh-engage-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+  .lh-expertise-row:hover { background: var(--neutral-50); }
+  .lh-expertise-summary { max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease; }
+  .lh-expertise-row:hover .lh-expertise-summary, .lh-expertise-row:focus-visible .lh-expertise-summary { max-height: 90px; opacity: 1; margin-top: 10px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .lh-reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .lh-reveal.lh-reveal-in { opacity: 1; transform: translateY(0); }
+    .lh-testimonial-quote { animation: lhQuoteIn 0.6s ease; }
+  }
+  @keyframes lhQuoteIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 900px) {
+    .lh-engage-grid { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 900px) {
+    .lh-insights-grid { grid-template-columns: repeat(2, 1fr) !important; max-width: 560px !important; }
+    .lh-footer-social-label { display: none !important; }
+  }
+  @media (max-width: 560px) {
+    .lh-insights-grid { grid-template-columns: 1fr !important; max-width: 300px !important; }
+  }
+  body.lh-mood-ivory .lh-hero-flip,
+  body.lh-mood-ivory .lh-hero-flip-muted { color: var(--ink-950) !important; }
+  body.lh-mood-ivory .lh-hero-flip-muted { opacity: 0.65; }
+
+  .lh-hero-pattern { transition: opacity 0.6s ease; }
+  body.lh-motion-on .lh-hero-pattern { animation: lhDrift 40s linear infinite; }
+  @keyframes lhDrift { from { background-position: 0 0; } to { background-position: 300px 300px; } }
+  body.lh-motion-on .lh-stat { animation: lhRise 0.8s ease both; }
+  body.lh-motion-on .lh-stat:nth-child(1) { animation-delay: 0.05s; }
+  body.lh-motion-on .lh-stat:nth-child(2) { animation-delay: 0.2s; }
+  body.lh-motion-on .lh-stat:nth-child(3) { animation-delay: 0.35s; }
+  @keyframes lhRise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="data.js?v=4"></script>
+<script type="text/babel" src="Icon.jsx"></script>
+<script type="text/babel" src="DotField.jsx"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="HeroSection.jsx"></script>
+<script type="text/babel" src="AboutSection.jsx"></script>
+<script type="text/babel" src="TeamSection.jsx"></script>
+<script type="text/babel" src="AssociatesTeaser.jsx"></script>
+<script type="text/babel" src="ExpertiseSection.jsx"></script>
+<script type="text/babel" src="EngagementSection.jsx"></script>
+<script type="text/babel" src="TestimonialsSection.jsx"></script>
+<script type="text/babel" src="CorporateInquiryPage.jsx"></script>
+<script type="text/babel" src="InternshipSection.jsx"></script>
+<script type="text/babel" src="InternshipFormPage.jsx"></script>
+<script type="text/babel" src="InsightsSection.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="Tweaks.jsx"></script>
+<script type="text/babel" src="DisclaimerModal.jsx"></script>
+<script type="text/babel" src="ChatWidget.jsx"></script>
+<script type="text/babel" src="PracticeAreaPage.jsx"></script>
+<script type="text/babel" src="App.jsx"></script>
+</body>
+</html>
