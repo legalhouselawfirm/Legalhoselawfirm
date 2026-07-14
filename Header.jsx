@@ -23,7 +23,7 @@ function Header({ onNavigate, onGoSection }) {
       <div style={{ background: 'var(--ink-950)', color: '#fff', padding: '8px 0', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60 }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'flex-end' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontFamily: 'var(--font-sans)' }}>
-            <span className="lh-top-bar-text" style={{ color: '#D1D5DB' }}>Request Appointment -</span>
+            <span className="lh-top-bar-text lh-top-bar-label" style={{ color: '#D1D5DB' }}>Request Appointment -</span>
             <a href={`tel:${contactInfo.phones[0]}`} style={{ color: 'var(--gold-500)', textDecoration: 'none' }}>{contactInfo.phones[0]}</a>
             <span className="lh-top-bar-text" style={{ color: '#6B7280' }}>;</span>
             <a href={`tel:${contactInfo.phones[1]}`} style={{ color: 'var(--gold-500)', textDecoration: 'none' }} className="lh-top-bar-text">{contactInfo.phones[1]}</a>
