@@ -1,0 +1,14 @@
+/* Webfonts — the source repo (legalhouselawfirm/LH) has no local font binaries;
+   frontend/src/App.css loads these same four families straight from Google Fonts.
+   We mirror that here: the @import guarantees every weight/style renders correctly,
+   and the @font-face below (real Google-hosted file) gives the compiler a concrete
+   font entry to index for the Type foundation. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_v86GnM.ttf) format('truetype');
+}

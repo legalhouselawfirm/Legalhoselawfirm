@@ -1,0 +1,69 @@
+/* Base resets + brand utility classes shared across cards and UI kits. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface-page);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--gold-500);
+  color: var(--ink-950);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-950);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+a {
+  color: var(--text-gold);
+}
+a:hover {
+  color: var(--gold-500);
+}
+
+/* Gold gradient fill — the brand's signature CTA treatment */
+.gold-gradient {
+  background: var(--gradient-gold);
+}
+
+/* Gold underline under section headings */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-gold-underline);
+}
+
+.gradient-divider {
+  height: 2px;
+  background: var(--gradient-divider);
+  margin: 2rem 0;
+}
