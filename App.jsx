@@ -3,9 +3,33 @@ function App() {
   const [page, setPage] = React.useState('home');
   const [selectedArea, setSelectedArea] = React.useState(null);
 
-  const goHome = () => { setPage('home'); window.scrollTo(0, 0); };
+  // Open a subpage AND push a browser-history entry, so the browser Back
+  // button returns to the landing page instead of leaving the site.
+  const openPage = (p, area) => {
+    if (area !== undefined) setSelectedArea(area);
+    setPage(p);
+    window.history.pushState({ lhPage: p }, '');
+    window.scrollTo(0, 0);
+  };
+
+  // Browser Back/Forward: restore whatever page the history entry holds
+  // (no entry / null state = landing page).
+  React.useEffect(() => {
+    const onPop = (e) => {
+      const p = (e.state && e.state.lhPage) ? e.state.lhPage : 'home';
+      setPage(p);
+      if (p === 'home') setSelectedArea(null);
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
+  // In-page "Back" links use real history so state stays consistent.
+  const goHome = () => { if (page !== 'home') window.history.back(); else window.scrollTo(0, 0); };
 
   const goToSection = (href) => {
+    if (page !== 'home') window.history.pushState({ lhPage: 'home' }, '');
     setPage('home');
     setTimeout(() => {
       const el = document.querySelector(href);
@@ -83,11 +107,11 @@ function App() {
           <LHAboutSection />
           <LHTeamSection />
           <LHAssociatesTeaser />
-          <LHExpertiseSection onOpenArea={(area) => { setSelectedArea(area); setPage('practice-area'); window.scrollTo(0, 0); }} />
-          <LHEngagementSection onOpenInquiry={() => { setPage('corporate-inquiry'); window.scrollTo(0, 0); }} />
+          <LHExpertiseSection onOpenArea={(area) => openPage('practice-area', area)} />
+          <LHEngagementSection onOpenInquiry={() => openPage('corporate-inquiry')} />
           <LHTestimonialsSection />
           <LHInsightsSection />
-          <LHInternshipSection onOpenForm={() => { setPage('internship-form'); window.scrollTo(0, 0); }} />
+          <LHInternshipSection onOpenForm={() => openPage('internship-form')} />
           <LHFooter />
         </main>
         <LHChatWidget />
