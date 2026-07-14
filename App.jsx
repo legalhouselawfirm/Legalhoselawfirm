@@ -40,6 +40,12 @@ function App() {
     }, 60);
   };
 
+  // Safety: always start subpages at the very top (esp. mobile, where a late
+  // render could otherwise leave the previous scroll position).
+  React.useEffect(() => {
+    if (page !== 'home') window.scrollTo(0, 0);
+  }, [page]);
+
   React.useEffect(() => {
     if (page !== 'home') return;
     const sections = document.querySelectorAll('main > section');
