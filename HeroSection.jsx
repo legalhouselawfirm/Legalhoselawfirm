@@ -32,7 +32,7 @@ function StatNumber({ value }) {
 function HeroSection() {
   return (
     <React.Fragment>
-      <section style={{ position: 'relative', minHeight: '85vh', background: 'var(--navy-950)', paddingTop: 130, overflow: 'hidden' }}>
+      <section className="lh-hero-section" style={{ position: 'relative', minHeight: '85vh', background: 'var(--navy-950)', paddingTop: 130, overflow: 'hidden' }}>
         <div className="lh-hero-pattern" style={{
           position: 'absolute', inset: 0, opacity: 0.05,
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23B49630'%3E%3Cpath d='M50 10 L50 90 M30 25 L70 25 M20 35 L30 25 L30 55 M70 25 L80 35 L70 55 M35 85 L65 85 L50 90 Z'/%3E%3C/svg%3E")`,
